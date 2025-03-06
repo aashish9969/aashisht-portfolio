@@ -1,0 +1,295 @@
+:root {
+    --primary-dark: #111;
+    --secondary-dark: #1a1a1a;
+    --grid-bright: rgba(255, 255, 255, 0.12); 
+    --text-light: #f1f1f1;
+    --highlight: #48c9b0; 
+    --accent: #ffcc00; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--primary-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--highlight);
+}
+
+.navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--highlight);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--highlight), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin: 10px 0 20px;
+    font-size: 1.2rem;
+}
+
+.hero-links a {
+    color: var(--highlight);
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid var(--highlight);
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.hero-links a:hover {
+    background: var(--highlight);
+    color: black;
+}
+
+/* Background Animation Grid */
+.background-animation {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--grid-bright) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-bright) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+}
+
+/* Sections */
+.section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--highlight);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skills-grid span {
+    background: var(--secondary-dark);
+    padding: 10px 15px;
+    border: 1px solid var(--highlight);
+    border-radius: 20px;
+    color: var(--text-light);
+}
+
+/* Achievements Timeline */
+.timeline {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.timeline li {
+    margin: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.timeline li::before {
+    content: '●';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 14px;
+}
+
+/* Certifications Grid */
+.cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cert-card {
+    padding: 15px 20px;
+    background: var(--secondary-dark);
+    border: 1px solid var(--highlight);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px var(--highlight);
+}
+
+/* Projects */
+.project {
+    background: var(--secondary-dark);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid var(--highlight);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project h3 {
+    margin-bottom: 8px;
+}
+
+.project a {
+    color: var(--highlight);
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    text-decoration: underline;
+    color: var(--accent);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--highlight);
+}
+
+/* Education Timeline (Same Style as Achievements) */
+.education .timeline li {
+    margin: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.education .timeline li::before {
+    content: '🎓';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Form */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--secondary-dark);
+    border: 1px solid var(--highlight);
+    color: var(--text-light);
+    margin-bottom: 15px;
+    outline: none;
+}
+
+form button {
+    padding: 12px 25px;
+    background: var(--highlight);
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: black;
+    margin-top: 50px;
+    color: var(--highlight);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .navbar a {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .skills-grid {
+        justify-content: center;
+    }
+
+    .timeline {
+        padding-left: 10px;
+    }
+
+    .project {
+        padding: 15px;
+    }
+}
