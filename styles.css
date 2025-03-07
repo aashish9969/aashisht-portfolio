@@ -1,8 +1,3 @@
-/* ========================
-   Global - Mobile First Approach
-   ======================== */
-
-/* Base styles (applies to all sizes, then refined in larger breakpoints) */
 :root {
     --primary-dark: #111;
     --secondary-dark: #1a1a1a;
@@ -25,15 +20,13 @@ body {
     overflow-x: hidden;
 }
 
-/* ========================
-   Navbar
-   ======================== */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
-    padding: 15px 5%;
+    padding: 15px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +42,7 @@ body {
 .navbar a {
     color: var(--text-light);
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 20px;
     transition: color 0.3s;
 }
 
@@ -57,35 +50,24 @@ body {
     color: var(--highlight);
 }
 
-/* Mobile Navbar */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 10px 5%;
-    }
-    .navbar a {
-        margin-left: 0;
-    }
-}
-
-/* ========================
-   Hero Section
-   ======================== */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 5%;
     position: relative;
     overflow: hidden;
 }
 
+.hero-content {
+    z-index: 2;
+    position: relative;
+}
+
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     background: linear-gradient(135deg, var(--highlight), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -93,24 +75,16 @@ body {
 
 .hero p {
     margin: 10px 0 20px;
-    font-size: 1rem;
-}
-
-.hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    font-size: 1.2rem;
 }
 
 .hero-links a {
-    padding: 10px 18px;
-    border: 1px solid var(--highlight);
     color: var(--highlight);
     text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid var(--highlight);
+    margin: 0 5px;
     transition: 0.3s;
-    text-align: center;
-    white-space: nowrap;
 }
 
 .hero-links a:hover {
@@ -118,59 +92,46 @@ body {
     color: black;
 }
 
-/* Hero for smaller screens */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero-links a {
-        width: 80%;
-        font-size: 14px;
-    }
+/* Background Animation Grid */
+.background-animation {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--grid-bright) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-bright) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
 }
 
-@media (max-width: 480px) {
-    .hero-links a {
-        width: 90%;
-        padding: 12px;
-    }
-}
-
-/* ========================
-   Sections
-   ======================== */
+/* Sections */
 .section {
-    padding: 60px 5%;
+    padding: 100px 10%;
     text-align: center;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     color: var(--highlight);
 }
 
-/* ========================
-   Skills Grid
-   ======================== */
+/* Skills Grid */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
 }
 
 .skills-grid span {
-    padding: 8px 12px;
     background: var(--secondary-dark);
+    padding: 10px 15px;
     border: 1px solid var(--highlight);
     border-radius: 20px;
-    font-size: 14px;
+    color: var(--text-light);
 }
 
-/* ========================
-   Timeline (Achievements & Education)
-   ======================== */
+/* Achievements Timeline */
 .timeline {
     list-style: none;
     max-width: 600px;
@@ -179,11 +140,10 @@ h2 {
 }
 
 .timeline li {
-    margin: 12px 0;
-    padding-left: 20px;
+    margin: 15px 0;
+    padding-left: 25px;
     position: relative;
-    line-height: 1.5;
-    font-size: 14px;
+    line-height: 1.6;
 }
 
 .timeline li::before {
@@ -192,32 +152,23 @@ h2 {
     position: absolute;
     left: 0;
     top: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-/* Specific for education timeline */
-.education .timeline li::before {
-    content: '🎓';
-}
-
-/* ========================
-   Certifications Grid
-   ======================== */
+/* Certifications Grid */
 .cert-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
 }
 
 .cert-card {
-    padding: 12px;
+    padding: 15px 20px;
     background: var(--secondary-dark);
     border: 1px solid var(--highlight);
     cursor: pointer;
     transition: transform 0.3s;
-    width: 100%;
-    max-width: 280px;
 }
 
 .cert-card:hover {
@@ -225,29 +176,28 @@ h2 {
     box-shadow: 0 0 10px var(--highlight);
 }
 
-/* ========================
-   Projects
-   ======================== */
+/* Projects */
 .project {
-    padding: 15px;
-    margin-bottom: 15px;
     background: var(--secondary-dark);
-    border: 1px solid var(--highlight);
-    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
     text-align: left;
+    border: 1px solid var(--highlight);
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
 .project h3 {
-    margin-bottom: 6px;
-    font-size: 18px;
+    margin-bottom: 8px;
 }
 
 .project a {
     color: var(--highlight);
-    font-weight: bold;
     text-decoration: none;
-    margin-right: 8px;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .project a:hover {
@@ -257,74 +207,109 @@ h2 {
 
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 12px var(--highlight);
+    box-shadow: 0 0 15px var(--highlight);
 }
 
-/* ========================
-   Form
-   ======================== */
+/* Education Timeline (Same Style as Achievements) */
+.education .timeline li {
+    margin: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.education .timeline li::before {
+    content: '🎓';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Form */
 form input, form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: var(--secondary-dark);
     border: 1px solid var(--highlight);
     color: var(--text-light);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     outline: none;
-    font-size: 14px;
 }
 
 form button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: var(--highlight);
     color: black;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 form button:hover {
     background: var(--accent);
+    color: black;
 }
 
-/* ========================
-   Footer
-   ======================== */
+/* Footer */
 footer {
     text-align: center;
     padding: 15px 0;
     background: black;
+    margin-top: 50px;
     color: var(--highlight);
 }
 
-/* ========================
-   Global Responsive Tweaks
-   ======================== */
+/* Responsive Tweaks */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .navbar a {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
     .section {
-        padding: 40px 5%;
+        padding: 60px 5%;
     }
-    .timeline li {
-        font-size: 13px;
+
+    .skills-grid {
+        justify-content: center;
     }
-    .skills-grid span {
-        padding: 6px 10px;
+
+    .timeline {
+        padding-left: 10px;
+    }
+
+    .project {
+        padding: 15px;
     }
 }
+@media (max-width: 768px) {
+    .hero-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
 
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.6rem;
-    }
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    .hero p {
-        font-size: 14px;
-    }
-    .project {
+    .hero-links a {
+        width: 80%;
+        text-align: center;
         padding: 12px;
     }
-    .cert-card {
+}
+@media (max-width: 480px) {
+    .hero-links a {
         width: 90%;
+        font-size: 14px;
     }
 }
