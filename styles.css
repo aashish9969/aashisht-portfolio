@@ -1,3 +1,8 @@
+/* ========================
+   Global - Mobile First Approach
+   ======================== */
+
+/* Base styles (applies to all sizes, then refined in larger breakpoints) */
 :root {
     --primary-dark: #111;
     --secondary-dark: #1a1a1a;
@@ -20,6 +25,9 @@ body {
     overflow-x: hidden;
 }
 
+/* ========================
+   Navbar
+   ======================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -62,6 +70,9 @@ body {
     }
 }
 
+/* ========================
+   Hero Section
+   ======================== */
 .hero {
     height: 100vh;
     display: flex;
@@ -107,6 +118,7 @@ body {
     color: black;
 }
 
+/* Hero for smaller screens */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -124,6 +136,9 @@ body {
     }
 }
 
+/* ========================
+   Sections
+   ======================== */
 .section {
     padding: 60px 5%;
     text-align: center;
@@ -135,6 +150,9 @@ h2 {
     color: var(--highlight);
 }
 
+/* ========================
+   Skills Grid
+   ======================== */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -150,6 +168,9 @@ h2 {
     font-size: 14px;
 }
 
+/* ========================
+   Timeline (Achievements & Education)
+   ======================== */
 .timeline {
     list-style: none;
     max-width: 600px;
@@ -174,10 +195,14 @@ h2 {
     font-size: 12px;
 }
 
+/* Specific for education timeline */
 .education .timeline li::before {
     content: '🎓';
 }
 
+/* ========================
+   Certifications Grid
+   ======================== */
 .cert-grid {
     display: flex;
     flex-wrap: wrap;
@@ -200,6 +225,9 @@ h2 {
     box-shadow: 0 0 10px var(--highlight);
 }
 
+/* ========================
+   Projects
+   ======================== */
 .project {
     padding: 15px;
     margin-bottom: 15px;
@@ -232,6 +260,9 @@ h2 {
     box-shadow: 0 0 12px var(--highlight);
 }
 
+/* ========================
+   Form
+   ======================== */
 form input, form textarea {
     width: 100%;
     padding: 10px;
@@ -255,6 +286,9 @@ form button:hover {
     background: var(--accent);
 }
 
+/* ========================
+   Footer
+   ======================== */
 footer {
     text-align: center;
     padding: 15px 0;
@@ -262,6 +296,9 @@ footer {
     color: var(--highlight);
 }
 
+/* ========================
+   Global Responsive Tweaks
+   ======================== */
 @media (max-width: 768px) {
     .section {
         padding: 40px 5%;
