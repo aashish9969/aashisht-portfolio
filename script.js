@@ -1,3 +1,4 @@
+// Typing Text Animation
 const typingText = document.querySelector('.typing-text');
 const words = ["Creative Designer", "SAP ABAP Enthusiast", "Frontend Developer"];
 let wordIndex = 0;
